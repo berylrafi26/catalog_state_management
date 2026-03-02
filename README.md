@@ -19,6 +19,7 @@ Begitu tombol ditekan, alurnya seperti ini:
 Intinya: tombol → update data → beri tahu sistem → UI refresh → cart bertambah.
 
 ### Clean Architecture
+```
 lib/
 ├── main.dart # Entry point aplikasi
 │
@@ -48,7 +49,7 @@ lib/
 │ └── add_button_widget.dart
 │
 └── injection.dart # Dependency Injection setup
-
+```
 ### Cara Menjalankan:
 
 #### 1. **Clone atau Download Proyek**
