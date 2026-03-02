@@ -1,8 +1,8 @@
 ### Preview
 
 <p align="center">
-  <img src="" width="300"/>
-  <img src="" width="300"/>
+  <img src="https://github.com/user-attachments/assets/43cd1e5f-efa4-41ba-bdd6-271f87fbb1f5" width="300"/>
+  <img src="https://github.com/user-attachments/assets/22a877a2-82a3-41fc-ba54-221dd1fcb626" width="300"/>
 </p>
 
 ### Flow Saat User Klik Tombol “tambah”
