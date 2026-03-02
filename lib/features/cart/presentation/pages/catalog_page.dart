@@ -22,7 +22,7 @@ class CatalogPage extends StatelessWidget {
         backgroundColor: Colors.brown,
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart, color: Colors.white,),
             onPressed: () => Navigator.pushNamed(context, AppRoute.cart),
           ),
         ],
