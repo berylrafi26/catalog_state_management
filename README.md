@@ -1,16 +1,68 @@
-# catalog_state_management
+### Preview
 
-A new Flutter project.
+<p align="center">
+  <img src="" width="300"/>
+  <img src="" width="300"/>
+</p>
 
-## Getting Started
+### Flow Saat User Klik Tombol “tambah”
 
-This project is a starting point for a Flutter application.
+Begitu tombol ditekan, alurnya seperti ini:
 
-A few resources to get you started if this is your first Flutter project:
+1. AddButton menjalankan fungsi provider.addItem().
+2. Provider meneruskan proses ke repository.addItem() untuk menyimpan perubahan data.
+3. Setelah data berubah, notifyListeners() dipanggil.
+4. Pemanggilan ini memberi sinyal ke UI bahwa ada perubahan state.
+5. UI melakukan rebuild otomatis.
+6. Item pada Cart bertambah sesuai aksi user.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Intinya: tombol → update data → beri tahu sistem → UI refresh → cart bertambah.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Clean Architecture
+lib/
+├── main.dart # Entry point aplikasi
+│
+├── core/ # Utilitas & konfigurasi global
+│ ├── routes/ # Routing konfigurasi
+│ │ └── app_router.dart
+│
+├── features/ # Fitur-fitur aplikasi
+│ └── cart/ # Fitur: Cart/Keranjang
+│ ├── data/ # DATA LAYER
+│ │ └── repositories/ # Implementasi repository
+│ │ └── cart_repository_impl.dart
+│ │
+│ ├── domain/ # DOMAIN LAYER
+│ │ ├── entities/ # Entity / objek bisnis murni
+│ │ │ └── product.dart
+│ │ └── repositories/ # Kontrak (abstract) repository
+│ │ └── cart_repository.dart
+│ │
+│ └── presentation/ # PRESENTATION LAYER
+│ ├── providers/ # Provider / State Notifier
+│ │ └── cart_provider.dart
+│ ├── pages/ # Halaman aplikasi
+│ │ ├── catalog_page.dart
+│ │ └── cart_page.dart
+│ └── widgets/ # Widget komponen kecil
+│ └── add_button_widget.dart
+│
+└── injection.dart # Dependency Injection setup
+
+### Cara Menjalankan:
+
+#### 1. **Clone atau Download Proyek**
+```bash
+git clone https://github.com/berylrafi26/catalog_state_management.git
+cd catalog_state_management
+```
+
+#### 2. **Install Dependencies**
+```bash
+flutter pub get
+```
+
+#### 3. **Run Aplikasi**
+```bash
+flutter run
+```
