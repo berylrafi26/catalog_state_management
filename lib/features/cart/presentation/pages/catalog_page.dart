@@ -17,9 +17,9 @@ class CatalogPage extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kafe'),
+        title: Text('Kafe', style: TextStyle(color: Colors.white,),),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.brown,
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart),
